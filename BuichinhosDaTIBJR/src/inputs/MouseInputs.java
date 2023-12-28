@@ -1,10 +1,10 @@
 package inputs;
 
-import main.GamePanel;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+
+import main.GamePanel;
 
 public class MouseInputs implements MouseListener, MouseMotionListener {
 
@@ -15,7 +15,18 @@ public class MouseInputs implements MouseListener, MouseMotionListener {
   }
 
   @Override
+  public void mouseDragged(MouseEvent e) {
+
+  }
+
+  @Override
+  public void mouseMoved(MouseEvent e) {
+    gamePanel.setRectPos(e.getX(), e.getY());
+  }
+
+  @Override
   public void mouseClicked(MouseEvent e) {
+
   }
 
   @Override
@@ -38,12 +49,4 @@ public class MouseInputs implements MouseListener, MouseMotionListener {
 
   }
 
-  @Override
-  public void mouseDragged(MouseEvent e) {
-  }
-
-  @Override
-  public void mouseMoved(MouseEvent e) {
-//    gamePanel.setRectPos(e.getX(), e.getY());
-  }
 }
